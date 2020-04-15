@@ -1,19 +1,14 @@
+package secket;
+
 import java.net.*;
 
 import java.io.*;
 
 public class Client {
     public static void main(String[] args) throws IOException {
-        // Передаем null в getByName(), получая
-        // специальный IP адрес "локальной заглушки"
-        // для тестирования на машине без сети:
+
         InetAddress addr = InetAddress.getByName(null);
-        // Альтернативно, вы можете использовать
-        // адрес или имя:
-        // InetAddress addr =
-        // InetAddress.getByName("127.0.0.1");
-        // InetAddress addr =
-        // InetAddress.getByName("localhost");
+
         System.out.println("addr = " + addr);
         Socket socket = new Socket(addr, Server.PORT);
         // Помещаем все в блок try-finally, чтобы
